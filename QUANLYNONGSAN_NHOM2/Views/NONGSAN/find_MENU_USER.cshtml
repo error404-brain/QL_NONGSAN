@@ -1,0 +1,13 @@
+﻿@model IEnumerable<QUANLYNONGSAN_NHOM2.Models.NONGSAN>
+
+<h2 style="text-align:center">DANH SÁCH NÔNG SẢN</h2>
+@foreach (var item in Model)
+{
+    <div style="display: inline-block ; margin: 25px; text-align:center">
+        <img src="~/Image_NONGSAN/@item.ANH" width="150px" height="150px" />
+        <p>@item.TENNS</p>
+        <a href="~/NONGSAN/Deatail_NS/@item.MANS">Xem Chi tiết</a>
+    </div>
+}
+
+

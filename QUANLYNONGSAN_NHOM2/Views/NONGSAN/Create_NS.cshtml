@@ -1,0 +1,84 @@
+﻿@model QUANLYNONGSAN_NHOM2.Models.NONGSAN
+
+@{
+    ViewBag.Title = "Create_NS";
+}
+
+<h2>Thêm sản phẩm Nông Sản mới</h2>
+<form style="background-color: lightgreen; width:500px">
+    @using (Html.BeginForm("Create_NS", "NONGSAN", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h4 style="text-align:center; justify-content:center; align-items:center; padding: 7px 7px 7px 7px"><b>Nhập thông tin Nông Sản mới</b></h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group" style=" margin-left:10px">
+                @Html.LabelFor(model => model.MANS, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.MANS, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.MANS, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group" style=" margin-left:10px">
+                @Html.LabelFor(model => model.TENNS, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.TENNS, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.TENNS, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group" style=" margin-left:10px">
+                @Html.LabelFor(model => model.DONVITINH, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.DONVITINH, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.DONVITINH, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group" style=" margin-left:10px">
+                @Html.LabelFor(model => model.GIA, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.GIA, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.GIA, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group" style=" margin-left:10px">
+                @Html.LabelFor(model => model.MANSX, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.MANSX, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.MANSX, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group" style=" margin-left:10px">
+                @Html.LabelFor(model => model.ANH, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <input type="file" name="ANH" value="" />
+                    @Html.ValidationMessageFor(model => model.ANH, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group" style=" margin-left:10px">
+                @Html.LabelFor(model => model.MALOAI, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.MALOAI, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.MALOAI, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group" style=" margin-left:10px">
+                <div class="col-md-offset-2 col-md-10">
+                    <input style="color: white; background-color: green; height:30px; width:150px; margin-bottom: 10px; display:flex; justify-content:center;align-items:center; margin-left: 70px" type="submit" value="Thêm sản phẩm" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    }
+</form>
+
+<div>
+    @Html.ActionLink("Danh sách sản phẩm", "show_NONGSAN")
+</div>

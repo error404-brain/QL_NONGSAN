@@ -1,0 +1,52 @@
+﻿@model IEnumerable<QUANLYNONGSAN_NHOM2.Models.DOITAC>
+
+@{
+    ViewBag.Title = "show_DT";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Danh sách đối tác</h2>
+
+<p>
+    <a href="~/DOITAC/Create_DT/">Thêm đối tác mới</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MADT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TENDT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DIACHI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DIENTHOAI)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MADT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TENDT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DIACHI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DIENTHOAI)
+        </td>
+        <td>
+            <a href="~/DOITAC/Update_DT/@item.MADT">Chỉnh sửa</a>
+            <a href="~/DOITAC/Detail_DT/@item.MADT">Chi tiết</a>
+            <a href="~/DOITAC/Delete_DT/@item.MADT">Xóa</a>
+        </td>
+    </tr>
+}
+
+</table>

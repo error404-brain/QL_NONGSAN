@@ -1,0 +1,70 @@
+﻿@model IEnumerable<QUANLYNONGSAN_NHOM2.Models.HOPDONG>
+
+@{
+    ViewBag.Title = "show_HD";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Danh sách hợp đồng</h2>
+
+<p>
+    <a href="~/HOPDONG/Create_HD/">Thêm hợp đồng mới</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MAHD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MANS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MADT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SOLUONG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NGAYKI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NGAYHOANTAT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TINHTRANG)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MAHD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MANS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MADT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SOLUONG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NGAYKI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NGAYHOANTAT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TINHTRANG)
+        </td>
+        <td>
+            <a href="~/HOPDONG/Update_HD/@item.MAHD">Chỉnh sửa</a>
+            <a href="~/HOPDONG/Detail_HD/@item.MAHD">Chi tiết</a>
+            <a href="~/HOPDONG/Delete_HD/@item.MAHD">Xóa</a>
+        </td>
+    </tr>
+}
+
+</table>

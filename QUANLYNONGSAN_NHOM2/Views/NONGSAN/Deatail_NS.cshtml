@@ -1,0 +1,32 @@
+﻿@model  QUANLYNONGSAN_NHOM2.Models.NONGSAN
+
+@{
+    ViewBag.Title = "Deatail_NS";
+}
+
+<br />
+<h2 style="text-align:center">Thông Tin Nông Sản</h2>
+<div style="float:left">
+    <h4>MÃ SẢN PHẨM: @Model.MANS</h4>
+    <h4>TÊN SẢN PHẨM:@Model.TENNS</h4>
+    <h4>GIÁ TIỀN: @Model.GIA</h4>
+    <h4>MÃ NHÀ SẢN XUẤT :@Model.MANSX</h4>
+    <h4>MÃ LOẠI:@Model.MALOAI</h4>
+</div>
+<div style="float:right">
+    <img src="~/Image_NONGSAN/@Model.ANH" width="500px" alt="Alternate Text" />
+</div>
+<div style="clear:both"></div>
+
+<div style="margin: 10px">
+    <a href="@Url.Action("main","Home")"> <button style="background-color:orange;color:white;border:none;height:40px" type="submit">MUA TIẾP</button></a>
+    <a href="@Url.Action("ThemGioHang", "GIOHANG", new { @id = Model.MANS.Trim(), @strUrl = Request.Url.ToString() } )"> <button onclick="clicksussces()" style="background-color:orange;color:white;border:none;height:40px" type="submit">MUA NGAY</button></a>
+</div>
+
+
+<script>
+    function clicksussces()
+    {
+        alert("Sản phẩm đã được thêm.","Thông báo");
+    }
+</script>

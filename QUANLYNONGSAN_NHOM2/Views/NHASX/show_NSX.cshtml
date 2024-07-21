@@ -1,0 +1,53 @@
+﻿@model IEnumerable<QUANLYNONGSAN_NHOM2.Models.NHASX>
+
+@{
+    ViewBag.Title = "show_NSX";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Danh sách nhà sản xuất</h2>
+
+<p>
+    <a href="~/NHASX/Create_NSX/">Thêm nhà sản xuất mới</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MANSX)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TENNSX)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NOISANXUAT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DIENTHOAI)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MANSX)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TENNSX)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NOISANXUAT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DIENTHOAI)
+        </td>
+        <td>
+            <a href="~/NHASX/Update_NSX/@item.MANSX">Chỉnh sửa</a>
+            <a href="~/NHASX/Detail_NSX/@item.MANSX">Chi tiết</a>
+            <a href="~/NHASX/Delete_NSX/@item.MANSX">Xóa</a>
+        </td>
+    </tr>
+}
+
+</table>

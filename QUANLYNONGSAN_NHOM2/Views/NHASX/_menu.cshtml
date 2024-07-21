@@ -1,0 +1,14 @@
+﻿@model IEnumerable <QUANLYNONGSAN_NHOM2.Models.NHASX>
+
+<ul class="list-group">
+    <li class="list-group-item" style="background-color:orange">LOẠI SẢN PHẨM</li>
+    @{
+
+        foreach (var item in Model)
+        {
+
+            <td><a href="~/NHASX/show_NSXCD/@item.MANSX" class="list-group-item">@item.TENNSX</a></td>
+        }
+    }
+</ul>
+

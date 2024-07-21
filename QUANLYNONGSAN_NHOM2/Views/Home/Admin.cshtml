@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewBag.Title = "Admin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Admin</h2>
+
+@Html.ActionLink("Chỉnh sửa thông tin nông sản","show_NONGSAN","NONGSAN")<br />
+@Html.ActionLink("Chỉnh sửa thông tin hợp đồng","show_HD","HOPDONG")<br />
+@Html.ActionLink("Chỉnh sửa thông tin nhân viên","show_NV","NHANVIEN")<br />
+@Html.ActionLink("Chỉnh sửa thông tin nhà sản xuất","show_NSX","NHASX")

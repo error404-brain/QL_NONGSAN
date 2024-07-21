@@ -1,0 +1,51 @@
+﻿@model QUANLYNONGSAN_NHOM2.Models.DOITAC
+
+@{
+    ViewBag.Title = "Detail_DT";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Chi tiết đối tác</h2>
+
+<div>
+    <h4>DOITAC</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MADT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MADT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TENDT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TENDT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DIACHI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DIACHI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DIENTHOAI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DIENTHOAI)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

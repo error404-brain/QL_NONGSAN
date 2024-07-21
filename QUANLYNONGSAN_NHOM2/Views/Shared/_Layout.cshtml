@@ -1,0 +1,164 @@
+﻿@using QUANLYNONGSAN_NHOM2.Models;
+
+@{ 
+    var GioHang = Session["GioHang"] as List<GIOHANG>;
+
+    if (GioHang != null)
+    {
+        ViewBag.SoLuongGioHang = GioHang.Select(x => x.SoLuong).Sum();
+    } else
+    {
+        ViewBag.SoLuongGioHang = 0;
+    }
+
+}
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>@ViewBag.Title - My ASP.NET Application</title>
+        <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+        <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    </head>
+    <body>
+
+        <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:white;border:none">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="/Home/main"><img src="~/LOGO/LOGO.jpg" width="50px"></a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Trang chủ", "main", "Home")</li>
+                        <li>@Html.ActionLink("Liên Hệ", "contact", "Home")</li>
+                        <li>@Html.ActionLink("Giới thiệu", "showroom", "Home")</li>
+                        <li style="line-height: 10px;padding-top:10px">
+                            <form action="/NONGSAN/find_MENU_USER">
+                                <input style="border-radius:10px; width:800px" type="search" name="find" value="" />
+                                <button class="btn btn-primary" type="submit">Tìm</button>
+                            </form>
+                        </li>
+                        <li><a href="~/GioHang/GioHang"><img src="~/Image_caro/shopping_cart.png" width="35px" alt="Alternate Text" />(@ViewBag.SoLuongGioHang)</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                    <br />
+                    @Html.Action("_menuLoai", "LOAISP")
+                    @Html.Action("_menu","NHASX")
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                    <div id="my-pics" class="carousel slide" data-ride="carousel" style="max-width; margin:10px;">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#my-pics" data-slide-to="0" class="active"></li>
+                            <li data-target="#my-pics" data-slide-to="1"></li>
+                            <li data-target="#my-pics" data-slide-to="2"></li>
+                        </ol>
+                        <!-- Content -->
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active">
+                                <img src="/Image_caro/hinh4.jpg" style="height: 400px ; width: 1000px">
+                            </div>
+
+                            <!-- Slide 1 -->
+                            <div class="item">
+                                <img src="/Image_caro/hinh1.jpg" style="height: 400px ; width: 1000px">
+                            </div>
+
+                            <!-- Slide 2 -->
+                            <div class="item">
+                                <img src="/Image_caro/hinh2.jpg" style="height: 400px ; width: 1000px">
+                            </div>
+
+                            <!-- Slide 3 -->
+                            <div class="item">
+                                <img src="/Image_caro/hinh3.jpg" style="height: 400px ; width: 1000px">
+                            </div>
+
+                        </div>
+
+                        <!-- Previous/Next controls -->
+                        <a class="left carousel-control" href="#my-pics" role="button" data-slide="prev">
+                            <span class="icon-prev" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#my-pics" role="button" data-slide="next">
+                            <span class="icon-next" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+
+                    </div>
+                    <div class="container body-content">
+
+
+                        @RenderBody()
+                        <hr />
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <table style="width:100%">
+                <tr style="background-color:orange">
+                    <td style="vertical-align: middle; text-align:center">
+                        &#127911 Hỗ trợ 24/7<br />
+                        Liên hệ chúng tôi 24h
+                    </td>
+                    <td style="vertical-align: middle; text-align:center">
+                        &#128179 Thanh toán<br />
+                        Bảo mật thanh toán
+                    </td>
+                    <td style="vertical-align: middle; text-align:center">
+                        &#128666 Giao hàng<br />
+                        Giao hàng tận nhà
+                    </td>
+                </tr>
+                <tr style="background-color:lightgreen">
+                    <td style="vertical-align: middle; text-align:center">
+                        &#127806 NÔNG SẢN SẠCH VIỆT NAM<br />
+                        Cung cấp thực phẩm an toàn, nông sản sạch cho người dân.<br />
+                        140 Lê Trọng Tấn, Tây Thạnh, TPHCM<br />
+                        0903268XXX
+                    </td>
+                    <td style="vertical-align: middle; text-align:center">
+                        <b>Về chúng tôi</b><br />
+                        @Html.ActionLink("Trang chủ", "main", "Home")<br />
+                        @Html.ActionLink("Liên Hệ", "contact", "Home")<br />
+                        @Html.ActionLink("Giới thiệu", "showroom", "Home")<br />
+                        <h4>&#128231 Đăng ký nhận thông tin khuyến mãi</h4>
+                    </td>
+                    <td style="vertical-align: middle; text-align:center">
+                        <h4>Hỗ trợ khách hàng</h4>
+                        @Html.ActionLink("Trang chủ", "main", "Home")
+                        <br />@Html.ActionLink("Liên Hệ", "contact", "Home")
+                        <br />@Html.ActionLink("Giới thiệu", "showroom", "Home")
+                        <br /><i class="fa fa-cc-visa" style="padding-right: 2px;"></i><i class="fa fa-chrome" style="padding-right: 2px"> </i><i class="	fa fa-facebook-square" style="padding-right:2px"> </i>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="text-align:center; background-color:green; color:white; width:100% ; height:30px; line-height:2"><h3>Chúc Quý Khách Hàng Sức Khỏe Và Nhiều May Mắn</h3><br />Bản quyền thuộc về nhóm 2 lớp cô Mai</td>
+                </tr>
+            </table>
+        </div>
+
+
+        <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+        <script src="~/Scripts/bootstrap.min.js"></script>
+    </body>
+</html>

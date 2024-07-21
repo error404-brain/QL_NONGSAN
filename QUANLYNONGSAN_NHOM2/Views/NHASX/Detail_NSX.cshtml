@@ -1,0 +1,51 @@
+﻿@model QUANLYNONGSAN_NHOM2.Models.NHASX
+
+@{
+    ViewBag.Title = "Detail_NSX";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Chi tiết nhà sản xuất</h2>
+
+<div>
+    <h4>NHASX</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MANSX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MANSX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TENNSX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TENNSX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NOISANXUAT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOISANXUAT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DIENTHOAI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DIENTHOAI)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "show_NSX")
+</p>

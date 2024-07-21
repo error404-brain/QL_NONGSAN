@@ -1,0 +1,59 @@
+﻿@model QUANLYNONGSAN_NHOM2.Models.NHANVIEN
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ADMIN_LOGIN</title>
+    <style>
+        body {
+            background-image: url(/Image_caro/pixel-art-digital-art-pixelated-pixels-wallpaper-preview.JPG);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            var username = document.forms["loginForm"]["tk"].value;
+            var password = document.forms["loginForm"]["mk"].value;
+
+            // Kiểm tra điều kiện nhập sai
+            if (username === "")
+            {
+                alert("Vui lòng nhập Tài Khoản");
+                return false;
+            }
+            if (password === "")
+            {
+                alert("Vui lòng nhập Mật Khẩu");
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div style="width: 500px; border:thin solid black; margin: 0 auto">
+        <div style="border:thin solid black;background-color:darkseagreen; color:white">
+            <h2 style="text-align:center">Tài khoản nhân viên</h2>
+        </div>
+        <form name="loginForm" action="/Login/ADMIN_LOGIN" onsubmit="validateForm()">
+            <div style="margin-left:10px">
+                <div style="margin-left:10px">
+                    <p>Tài khoản</p>
+                    <div><input type="search" name="tk" value="" placeholder="Username" style="width:90%; height:40px;font-size:16px; border:none; outline:none; border-bottom: 2px solid #adadad" /></div>
+                    <p>Mật Khẩu</p>
+                    <div><input type="password" name="mk" value="" placeholder="Password" style="width:90%; height:40px;font-size:16px; border:none; outline:none; border-bottom: 2px solid #adadad" /></div>
+                    <br />
+                    <div><button class="btn-submit" type="submit" style="width: 90%; height: 40px; border-radius: 25px; border: none; outline:none; background-color: orange; color:white;font-size:18px;font-weight: bold;margin:20px;cursor:pointer">Đăng Nhập</button></div>
+                    <br />
+                </div>
+                </div>
+        </form>
+    </div>
+</body>
+</html>

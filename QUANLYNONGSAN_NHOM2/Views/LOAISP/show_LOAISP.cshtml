@@ -1,0 +1,20 @@
+﻿@model IEnumerable<QUANLYNONGSAN_NHOM2.Models.LOAISP>
+@{
+    ViewBag.Title = "show_LOAISP";
+}
+
+<h2>DANH SÁCH LOẠI SẢN PHẨM</h2>
+<table class="table">
+    <tr>
+        <td>MÃ LOẠI</td>
+        <td>TÊN LOẠI</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.MALOAI</td>
+            <td>@item.TENLOAI</td>
+        </tr>
+    }
+</table>
+

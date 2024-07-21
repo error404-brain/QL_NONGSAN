@@ -1,0 +1,52 @@
+﻿@model IEnumerable<QUANLYNONGSAN_NHOM2.Models.NONGSAN>
+
+@{
+    ViewBag.Title = "show_NONGSAN";
+}
+
+<form action="/NONGSAN/findInformation">
+    <input type="search" name="find" value="" />
+    <button class="btn btn-primary" type="submit">Tìm</button>
+</form>
+
+<form action="/NONGSAN/soft">
+    <select name="sx">
+        <option value="1">Sắp sếp theo Giá</option>
+        <option value="2">Sắp sếp theo Tên Nông sản</option>
+    </select>
+    <button class="btn btn-primary" type="submit">Sắp sếp</button>
+</form>
+
+<h2 style="text-align:center">DANH SÁCH NÔNG SẢN</h2>
+<table class="table">
+    <tr>
+        <td>MÃ NÔNG SẢN</td>
+        <td>TÊN NÔNG SẢN</td>
+        <td>GIÁ</td>
+        <td>ĐƠN VỊ</td>
+        <td>MÃ SẢN XUẤT</td>
+        <td>MÃ LOẠI</td>
+        <td>ẢNH</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>@item.MANS</td>
+            <td>@item.TENNS</td>
+            <td>@item.GIA</td>
+            <td>@item.DONVITINH</td>
+            <td>@item.MANSX</td>
+            <td>@item.MALOAI</td>
+            <td><img src="~/Image_NONGSAN/@item.ANH" alt="Alternate Text" width="100px" height="100px" /></td>
+            <td>@Html.ActionLink("Add", "Create_NS", "NONGSAN")</td>
+            <td><a href="~/NONGSAN/Deatail_NS/@item.MANS">Detail</a></td>
+            <td><a href="~/NONGSAN/Delete_NS/@item.MANS">Delete</a></td>
+            <td>@Html.ActionLink("Edit", "Update_NS", "NONGSAN")</td>
+
+        </tr>
+    }
+</table>
+
+
+

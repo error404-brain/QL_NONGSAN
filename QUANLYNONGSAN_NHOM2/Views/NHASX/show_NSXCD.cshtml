@@ -1,0 +1,16 @@
+﻿@model IEnumerable <QUANLYNONGSAN_NHOM2.Models.NHASX>
+
+@{
+    ViewBag.Title = "show_NSXCD";
+}
+
+<h2>RAU CỦ THEO NHÀ SẢN XUẤT</h2>
+@foreach (var item in Model)
+{
+    <div style="display: inline-block ; margin: 25px; text-align:center">
+        <img src="~/Image_NONGSAN/@item.nong.ANH" width="150px" height="150px" />
+        <p>@item.nong.TENNS</p>
+        <a href="~/NONGSAN/Deatail_NS/@item.nong.MANS">Xem Chi tiết</a>
+    </div>
+}
+

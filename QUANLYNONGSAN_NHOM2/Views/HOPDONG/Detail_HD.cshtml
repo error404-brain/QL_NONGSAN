@@ -1,0 +1,75 @@
+﻿@model QUANLYNONGSAN_NHOM2.Models.HOPDONG
+
+@{
+    ViewBag.Title = "Detail_HD";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Chi tiết hợp đồng</h2>
+
+<div>
+    <h4>HOPDONG</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MAHD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MAHD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MANS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MANS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MADT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MADT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SOLUONG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SOLUONG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NGAYKI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NGAYKI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NGAYHOANTAT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NGAYHOANTAT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TINHTRANG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TINHTRANG)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "show_HD")
+</p>
